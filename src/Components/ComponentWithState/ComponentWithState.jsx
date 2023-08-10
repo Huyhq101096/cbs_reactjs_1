@@ -41,6 +41,7 @@ export default class ComponentWithState extends Component {
             size: this.state.size + 1
         })
     }
+    
 
     render() {
         return (
