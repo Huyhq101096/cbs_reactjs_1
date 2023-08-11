@@ -4,14 +4,15 @@ import AssHomePage from "./Components/Navigation/AssHomePage/AssHomePage";
 import HandleEvent from "./Components/HandleEvent/HandleEvent";
 import ComponentWithState from "./Components/ComponentWithState/ComponentWithState";
 import PhoneDetail from "./Components/Props/PhoneDetail/PhoneDetail";
+import AssCart from "./Components/Props/AssCart/AssCart";
 export default class App extends Component {
   render() {
     return (
         // <AssHomePage />
         // <HandleEvent />
         // <ComponentWithState />
-        <PhoneDetail />
-        
+        // <PhoneDetail />
+        <AssCart />
     );
   }
 }
