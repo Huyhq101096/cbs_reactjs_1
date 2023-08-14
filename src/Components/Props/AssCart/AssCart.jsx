@@ -47,23 +47,48 @@ export default class AssCart extends Component {
   };
 
   addItem = (itemClick) => {
-
     let carts = this.state.cart;
-
     let productCart = carts.find((item) => item.id === itemClick.id);
-    
-
     if (productCart) {
       productCart.quantity += 1;
     } else {
       carts.push(itemClick);
     }
-    console.log(productCart)
-    console.log(carts)
+    // console.log(productCart);
+    // console.log(carts);
     this.setState({
       cart: carts,
     });
   };
+
+  deleteItem = (idClick) => {
+    // console.log(idClick);
+    let findId = this.state.cart.find((item) => item.id === idClick);
+    console.log(findId)
+    if (findId) {
+      const updatedCart = this.state.cart.filter(item => item !== findId);
+      this.setState({
+        cart: updatedCart
+      });
+    }
+    console.log(this.state)
+  };
+
+  changeQuantity = (idClick, num) => {
+    console.log(idClick,num)
+    let item = this.state.cart.find(i => i.id === idClick)
+    if (item.quantity > 0) {
+      item.quantity += num;
+    }
+    if (item.quantity === 0) {
+      this.state.cart.filter(i => i !== item)
+    }
+    this.setState({
+      cart: this.state.cart
+    })
+
+  }
+  
 
   render() {
     return (
@@ -78,7 +103,11 @@ export default class AssCart extends Component {
           })}
         </div>
         <h3>Cart</h3>
-        <Cart cart={this.state.cart} />
+        <Cart 
+        cart={this.state.cart} 
+        deleteItem={this.deleteItem} 
+        changeQuantity={this.changeQuantity}
+        />
       </div>
     );
   }
