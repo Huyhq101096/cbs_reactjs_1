@@ -12,6 +12,7 @@ import Login from "./pages/Login";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import HomeTemplate from "./Components/Template/HomeTemplate";
 import ProductManage from "./pages/DemoForm/ProductManage";
+import LifeCycleDemo from "./pages/LifeCycleDemo/LifeCycleDemo";
 
 export default class App extends Component {
   render() {
@@ -25,6 +26,7 @@ export default class App extends Component {
             <Route path="/about" element={<About />}></Route>
             <Route path="/login" element={<Login />}></Route>
             <Route path="/form" element={<ProductManage />}></Route>
+            <Route path="/lifecycle" element={<LifeCycleDemo />}></Route>
           </Route>
           
           <Route path="*" element={<Navigate to={"/"} />}></Route>

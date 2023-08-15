@@ -27,13 +27,33 @@ export default class FormProduct extends Component {
     newValues[id] = value
 
     // xử lí errors
+    let dataType = e.target.getAttribute('data-type');
+    console.log('dataType', dataType)
+
+
+    let messageError = ''
+    if(value.trim() === '') {
+      messageError = id + ' cannot be blank!';
+    } else {
+      // check validation còn lại
+      switch (dataType) {
+        case 'number': {
+          let regexNumber = /^\d+$/;
+          if(!regexNumber.test(value)) {
+            messageError = id + ' is numbers';
+          }
+        }; break;
+
+      }
+    }
+
     let newErrors = {...this.state.errors}
-    newErrors[id] = value
+    newErrors[id] = messageError
 
     // xử lí state
     this.setState({
       values: newValues,
-      errors: {}
+      errors: newErrors
     })
 
   
@@ -62,6 +82,7 @@ export default class FormProduct extends Component {
               <div className="form-group">
                 <p>id</p>
                 <input
+                  data-type="number"
                   className="form-control"
                   id="id"
                   name="id"
@@ -101,11 +122,13 @@ export default class FormProduct extends Component {
               <div className="form-group">
                 <p>price</p>
                 <input
+                  data-type="number"
                   className="form-control"
                   id="price"
                   name="price"
                   onInput={this.handelChangeInput}
                 />
+                 <p className="text text-danger">{this.state.errors.price}</p>
               </div>
             </div>
           </div>

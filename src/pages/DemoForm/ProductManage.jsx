@@ -2,6 +2,19 @@ import React, { Component } from "react";
 import FormProduct from "./FormProduct";
 
 export default class ProductManage extends Component {
+  state = {
+    arrProduct: [
+      {
+        id: "11",
+        name: "iphone",
+        price: 1000,
+        image: "./img/applephone.jppg",
+        description: "iphone pro max",
+        type: "phone",
+      },
+    ],
+  };
+
   render() {
     return (
       <div className="container">

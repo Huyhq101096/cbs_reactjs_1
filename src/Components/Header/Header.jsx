@@ -11,6 +11,7 @@ export default class Header extends Component {
         <NavLink  className={({isActive}) => isActive ? 'nav-link text-dark' : 'nav-link'} to="/contact">Contact</NavLink>
         <NavLink  className={({isActive}) => isActive ? 'nav-link bg-white text-dark' : 'nav-link'} to="about">About</NavLink>
         <NavLink  className={({isActive}) => isActive ? 'nav-link  bg-white text-dark' : 'nav-link'} to="/form">Form</NavLink>
+        <NavLink  className={({isActive}) => isActive ? 'nav-link  bg-white text-dark' : 'nav-link'} to="/lifecycle">LifeCycle</NavLink>
       </div>
     );
   }
