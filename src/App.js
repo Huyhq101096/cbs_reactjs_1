@@ -1,40 +1,25 @@
-import React, { Component } from "react";
-import Navigation from "./Components/Navigation/Navigation";
-import AssHomePage from "./Components/Navigation/AssHomePage/AssHomePage";
-import HandleEvent from "./Components/HandleEvent/HandleEvent";
-import ComponentWithState from "./Components/ComponentWithState/ComponentWithState";
-import PhoneDetail from "./Components/Props/PhoneDetail/PhoneDetail";
-import AssCart from "./Components/Props/AssCart/AssCart";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Login from "./pages/Login";
+import logo from './logo.svg';
+import './App.css';
 
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import HomeTemplate from "./Components/Template/HomeTemplate";
-import ProductManage from "./pages/DemoForm/ProductManage";
-import LifeCycleDemo from "./pages/LifeCycleDemo/LifeCycleDemo";
-import DemoRedux from "./Components/DemoRedux/DemoRedux";
-
-export default class App extends Component {
-  render() {
-    return (
-      <BrowserRouter>
-        {/* <Header /> */}
-        <Routes>
-          <Route path="" element={<HomeTemplate />}>
-            <Route index element={<Home />}></Route>
-            <Route path="/home" element={<Home />}></Route>
-            <Route path="/about" element={<About />}></Route>
-            <Route path="/login" element={<Login />}></Route>
-            <Route path="/form" element={<ProductManage />}></Route>
-            <Route path="/lifecycle" element={<LifeCycleDemo />}></Route>
-            <Route path="/demo-redux" element={<DemoRedux />}></Route>
-
-          </Route>
-          
-          <Route path="*" element={<Navigate to={"/"} />}></Route>
-        </Routes>
-      </BrowserRouter>
-    );
-  }
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
 }
+
+export default App;
