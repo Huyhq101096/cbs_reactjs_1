@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Contact from './pages/Contact';
 import UseStateDemo from './pages/Hooks/UseStateDemo';
+import UseEffectDemo from './pages/Hooks/UseEffectDemo';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -19,6 +20,7 @@ root.render(
           <Route path='register' element={<Register />}/>
           <Route path='contact' element={<Contact />}/>
           <Route path='useStateDemo' element={<UseStateDemo />}/>
+          <Route path='useEffectDemo' element={<UseEffectDemo />}/>
         </Route>
       </Routes>
       
