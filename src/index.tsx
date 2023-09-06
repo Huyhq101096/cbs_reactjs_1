@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { store } from "./redux/reducers/ProductReducer";
+import { Provider } from "react-redux";
 
 // react router dom
 import {
@@ -24,6 +26,7 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
+  <Provider store={store}>
   <HistoryRouter history={history}>
     <Routes>
       <Route path="" element={<HomeTemplate />}>
@@ -40,4 +43,5 @@ root.render(
       </Route>
     </Routes>
   </HistoryRouter>
+  </Provider>
 );
