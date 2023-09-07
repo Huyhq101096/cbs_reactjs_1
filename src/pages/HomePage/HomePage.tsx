@@ -2,8 +2,10 @@ import React, { useEffect } from "react";
 import CartProduct from "../../components/CartProduct/CartProduct";
 import { useDispatch, useSelector } from "react-redux";
 import { DispatchType, RootState } from "../../redux/store";
-import { ProductItem, getProductApi } from "../../redux/reducers/productReducer";
-
+import {
+  ProductItem,
+  getProductApi,
+} from "../../redux/reducers/productReducer";
 
 type Props = {};
 
