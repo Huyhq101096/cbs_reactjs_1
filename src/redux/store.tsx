@@ -1,11 +1,16 @@
-import React from 'react'
+import { PayloadAction, configureStore } from "@reduxjs/toolkit" 
+import productReducer from "./reducers/productReducer"
 
-type Props = {}
 
-const store = (props: Props) => {
-  return (
-    <div>store</div>
-  )
-}
 
-export default store
+export const store = configureStore({
+  reducer: {
+    productReducer: productReducer
+  }
+})
+
+export type RootState = ReturnType<typeof store.getState>
+
+export type DispatchType = typeof store.dispatch
+
+

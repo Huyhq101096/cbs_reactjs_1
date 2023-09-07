@@ -9,7 +9,7 @@ type Props = {}
 const HomeTemplate = (props: Props) => {
   return (
     <>
-        <HeaderHome logo={<ShoppingCartOutlined style={{fontSize:100}}/>} />
+        <HeaderHome logo={<ShoppingCartOutlined style={{fontSize:50}}/>} />
 
         <div className="content" style={{minHeight: '75vh'}}>
             <Outlet />

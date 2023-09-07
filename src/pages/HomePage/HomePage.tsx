@@ -1,24 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CartProduct from "../../components/CartProduct/CartProduct";
+import { useDispatch, useSelector } from "react-redux";
+import { DispatchType, RootState } from "../../redux/store";
+import { ProductItem, getProductApi } from "../../redux/reducers/productReducer";
+
 
 type Props = {};
 
 const HomePage = (props: Props) => {
+  const { arrProduct } = useSelector(
+    (state: RootState) => state.productReducer
+  );
+  const dispatch: DispatchType = useDispatch();
 
-  let product = {
-    id: 1,
-    name: 'ultraboost',
-    price: 1000,
-    image: 'https://zocker.vn/pic/Product/giay-zocker-inspire-xanh-chuoi-2_3472_HasThumb_Thumb.webp'
-  }
+  const getApiProduct = () => {
+    const actionAsync = getProductApi();
+    dispatch(actionAsync);
+  };
+
+  useEffect(() => {
+    getApiProduct();
+  }, []);
 
   return (
     <div className="container">
       <h3>Home</h3>
       <div className="row">
-        <div className="col-4 mt-2">
-          <CartProduct prod={product}  />
-        </div>
+        {arrProduct.map((prod: ProductItem, index: Number) => {
+          return (
+            <div className="col-4 mt-2" key={prod.id}>
+              <CartProduct prod={prod} />
+            </div>
+          );
+        })}
       </div>
     </div>
   );
