@@ -4,7 +4,7 @@ import productReducer from "./reducers/productReducer";
 export const store = configureStore({
   reducer: {
     productReducer: productReducer,
-    postsReducer: state => 1 ,
+    likeReducer: (state={number: 1}) => state,
     imgReducer: (state="./img/black-car.jpb") => {
       return state;
     },

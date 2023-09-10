@@ -1,5 +1,6 @@
 import React from 'react'
-import imgRedCar from '../../assets/imgRedCar.jpg';
+import { connect } from 'react-redux'
+import { RootState } from '../../redux/store'
 
 /*
   B1: Xây dựng giao diện (dàn layour chia component)
@@ -12,17 +13,23 @@ import imgRedCar from '../../assets/imgRedCar.jpg';
 type Props = {}
 
 const Detail = (props: Props) => {
+  console.log(props)
   return (
     <div>
       <h3>Name</h3>
       <div className="w-25 mt-2">
-        <img src={imgRedCar} alt="..." />
+        <img src="https://i.pravatar.cc/150?img=3" alt="..." />
       </div>
       <div className="card-body">
-        <i className='fa fa-heart display-4 text-danger' style={{cursor: 'pointer'}}></i>
+        <i className='fa fa-heart display-4 text-danger' style={{cursor: 'pointer'}}> 100</i>
       </div>
     </div>
   )
 }
 
-export default Detail
+const mapStateToProps = (state:RootState) => state.likeReducer;
+
+// dùng thư viên connect để tạo ra nội dung component mới có kết nối dữ liệu với redux
+const ComponentWithRedux = connect(mapStateToProps)(Detail)
+
+export default ComponentWithRedux
