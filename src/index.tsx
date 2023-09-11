@@ -13,7 +13,7 @@ import {
 import { createBrowserHistory, BrowserHistory } from "history";
 import HomeTemplate from "./templates/HomeTemplate/HomeTemplate";
 import HomePage from "./pages/HomePage/HomePage";
-import Detail from "./pages/Detail/DetailProduct";
+import Detail from "./pages/Detail/DetailPage";
 import Search from "./pages/Search/Search";
 import Register from "./pages/Register/Register";
 import Cart from "./pages/Cart/Cart";

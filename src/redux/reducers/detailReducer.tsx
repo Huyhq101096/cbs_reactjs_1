@@ -2,7 +2,8 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { httpNonAuth } from "../../util/config";
 import { DispatchType } from "../store";
 
-interface DetailItem {
+// interface phải đúng với response trả về
+export interface DetailItem {
     id: number,
     name: string,
     image: string
@@ -12,7 +13,6 @@ interface DetailItem {
 interface DetailState {
    detail: DetailItem
 }
-
 
 const initialState: DetailState = {
     detail: {
@@ -37,7 +37,7 @@ export default detailReducer.reducer;
 
 export const getDetailApi = (number: any) => {
     return async(dispatch:DispatchType) => {
-        const res = await httpNonAuth.get('/api/product');
+        const res = await httpNonAuth.get('/api/Product/getbyid/?id=' + number);
         const action:PayloadAction<DetailState> = getDetailAction(res.data.content);
         dispatch(action)
 
