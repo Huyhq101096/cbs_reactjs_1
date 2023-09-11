@@ -1,6 +1,9 @@
 import React from 'react'
 import { NavLink } from "react-router-dom";
 import { ProductModel } from '../../models/interface/ProductModel';
+
+
+
 type Props = {
   prod?: ProductModel
 }

@@ -1,13 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import productReducer from "./reducers/productReducer";
+import detailReducer from "./reducers/"
+
 
 export const store = configureStore({
   reducer: {
     productReducer: productReducer,
-    likeReducer: (state={number: 1}) => state,
-    imgReducer: (state="./img/black-car.jpb") => {
-      return state;
-    },
+    detailReducer: detailReducer
   },
 });
 
