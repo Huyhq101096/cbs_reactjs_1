@@ -1,4 +1,5 @@
 export interface DetailModel {
-    img: string,
-    number: number
+    id: number,
+    name: string,
+    alias: string
 }

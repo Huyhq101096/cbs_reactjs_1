@@ -1,11 +1,16 @@
 import React from "react";
 import { DetailModel } from "../../models/interface/DetailModel";
 
+
+
+
+
 type Props = {
     detail?: DetailModel
 };
 
 const DetailProduct = ({detail}: Props) => {
+  console.log(detail)
   return (
     <div>
       <h3>Name</h3>
@@ -20,7 +25,7 @@ const DetailProduct = ({detail}: Props) => {
         <i
           className="fa fa-heart display-4 text-danger"
           style={{ cursor: "pointer" }}
-        >{detail?.number}</i>
+        >{detail?.name}</i>
       </div>
     </div>
   );

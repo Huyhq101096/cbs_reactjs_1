@@ -21,7 +21,9 @@ const DetailPage = (props: Props) => {
   const { id } = useParams<{ id: string }>();
 
   const details = useSelector(
-    (state: RootState) => state.detailReducer
+    
+    (state: RootState) => state.detailReducer.detail
+    
   );
   const dispatch: DispatchType = useDispatch();
 
@@ -36,18 +38,9 @@ const DetailPage = (props: Props) => {
 
   return (
     <div>
-      <DetailProduct />
+      <DetailProduct detail={details}/>
     </div>
   );
 };
-
-// const mapStateToProps = (state: RootState) => {
-//   return {
-//     like: state || 0,
-//   };
-// };
-
-// dùng thư viên connect để tạo ra nội dung component mới có kết nối dữ liệu với redux
-
 
 export default DetailPage;
