@@ -1,4 +1,6 @@
+import { render } from "@testing-library/react";
 import React from "react";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 type Props = {
@@ -6,6 +8,40 @@ type Props = {
 };
 
 const HeaderHome = (props: Props) => {
+
+  const { userLogin } = useSelector((state: any) => state.userReducer);
+
+  const renderLogin = () => {
+
+    if (userLogin.accessToken) {
+      return <>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/profile">
+            hello {userLogin.email}
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <span style={{ cursor: 'pointer' }} className="nav-link" >
+            Logout
+          </span>
+
+        </li>
+      </>
+    }
+
+    return <>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/login">
+            Login
+          </NavLink>
+        </li>
+      </>
+
+  }
+
+
+
+
   return (
     <nav className="navbar navbar-expand-sm navbar-dark  bg-dark">
       <div className="container">
@@ -30,11 +66,7 @@ const HeaderHome = (props: Props) => {
                 Home
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/login">
-                Login
-              </NavLink>
-            </li>
+            {renderLogin()}
             <li className="nav-item">
               <NavLink className="nav-link" to="/register">
                 Register

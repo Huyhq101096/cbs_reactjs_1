@@ -2,13 +2,15 @@ import { configureStore } from "@reduxjs/toolkit";
 import productReducer from "./reducers/productReducer";
 import detailReducer from "./reducers/detailReducer"
 import counterReducer from "./reducers/counterReducer";
+import userReducer from "./reducers/userReducer";
 
 
 export const store = configureStore({
   reducer: {
     productReducer: productReducer,
     detailReducer: detailReducer,
-    counterReducer: counterReducer
+    counterReducer: counterReducer,
+    userReducer: userReducer,
   },
 });
 
