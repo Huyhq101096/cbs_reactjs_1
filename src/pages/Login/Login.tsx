@@ -9,7 +9,7 @@ type Props = {};
 
 const Login = (props: Props) => {
 
-  const {email,password} = useSelector((state: RootState) => state.userReducer);
+  const userLogin = useSelector((state: RootState) => state.userReducer);
 
 
   const dispatch: DispatchType = useDispatch();

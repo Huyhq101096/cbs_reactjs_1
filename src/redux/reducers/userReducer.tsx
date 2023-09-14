@@ -1,23 +1,32 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { DispatchType } from '../store';
 import axios from 'axios';
+import { USER_LOGIN } from '../../util/config';
 
-export interface UserState {
+interface userLogin {
+    accessToken: string;
     email: string;
     password: string;
 }
 
+export interface UserState {
+    userLogin: userLogin
+}
+
 const initialState: UserState = {
-    email: '',
-    password: '',
+    userLogin: {
+        email: '',
+        password: '',
+        accessToken: '',
+    }
 }
 
 const userReducer = createSlice({
     name: 'userReducer',
     initialState,
     reducers: {
-        loginAction: (state: UserState, action: PayloadAction<string>) => {
-            state.email = action.payload;
+        loginAction: (state: UserState, action: PayloadAction<userLogin>) => {
+            state.userLogin = action.payload;
         }
     }
 });
@@ -35,12 +44,15 @@ export const loginActionApi = (userLogin: any) => {  // userLogin: {email: strin
 
         // call api
         const res = await axios({
-            url: 'https:/shop.cyberlearn.vn/api/Users/signin',
+            url: 'https://shop.cyberlearn.vn/api/Users/signin',
             method: 'POST',
             data: userLogin
         });
         // login success
         const action = loginAction(res.data.content);
         dispatch(action);
+
+        // save token to local storage
+        localStorage.setItem(USER_LOGIN, res.data.content);
     }
 }

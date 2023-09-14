@@ -13,7 +13,7 @@ const HeaderHome = (props: Props) => {
 
   const renderLogin = () => {
 
-    if (userLogin.accessToken) {
+    if (userLogin?.accessToken) {
       return <>
         <li className="nav-item">
           <NavLink className="nav-link" to="/profile">
@@ -38,8 +38,6 @@ const HeaderHome = (props: Props) => {
       </>
 
   }
-
-
 
 
   return (
