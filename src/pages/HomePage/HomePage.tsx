@@ -9,6 +9,7 @@ import {
 
 type Props = {};
 
+
 const HomePage = (props: Props) => {
   const { arrProduct } = useSelector(
     (state: RootState) => state.productReducer
