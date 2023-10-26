@@ -44,3 +44,11 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+# Install project in docker
+
+    - Docker build images : docker build -t <name image>:<tag image>  .
+        ex: docker build -t cbs_reatjs:1.0.0 .
+
+    - Docker run images : docker run --name demo-react-app(this is name container) -d -p 80(this is port docker):3000 --rm cbs_reactjs(this is name images)
+        ex: docker run --name demo-react -d -p 80:3000 --rm cbs_reactjs

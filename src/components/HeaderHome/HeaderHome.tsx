@@ -30,12 +30,12 @@ const HeaderHome = (props: Props) => {
     }
 
     return <>
-        <li className="nav-item">
-          <NavLink className="nav-link" to="/login">
-            Login
-          </NavLink>
-        </li>
-      </>
+      <li className="nav-item">
+        <NavLink className="nav-link" to="/login">
+          Login
+        </NavLink>
+      </li>
+    </>
 
   }
 
@@ -61,7 +61,7 @@ const HeaderHome = (props: Props) => {
           <ul className="navbar-nav me-auto mt-2 mt-lg-0">
             <li className="nav-item">
               <NavLink className="nav-link" to="/">
-                Home
+                HomeDemo123
               </NavLink>
             </li>
             {renderLogin()}
