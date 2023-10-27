@@ -52,3 +52,22 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
     - Docker run images : docker run --name demo-react-app(this is name container) -d -p 80(this is port docker):3000 --rm cbs_reactjs(this is name images)
         ex: docker run --name demo-react -d -p 80:3000 --rm cbs_reactjs
+
+# Document about docker
+
+    - docker build . : this command to build docker image . image will have name is "none".
+
+    - docker build -t <name image> . : to build docker image . image will have name is name-image.
+        * Ex: docker build -t docker-react-i .        image will have name is [docker-react-i]
+
+    - docker run -d --name <name container> <name image>
+        * Ex: docker run -d --name docker-react-c docker-react-i
+
+    - docker rm docker <name container> -f : to remove container
+        * Ex: docker rm docker-react-c -f
+
+    -  docker run -d -p 4000:3000 --name docker-react-c docker-react-i : to run container and mapping port
+        * Ex: docker run -d -p 4000:3000 --name docker-react-c docker-react-i
+
+
+

@@ -14,20 +14,26 @@ COPY . .
 # copy all files from current folder to container folder
 
 RUN yarn install && yarn build
+
+# ENV REACT_APP_PORT=3001
+
+EXPOSE 4000
+
+CMD [ "yarn", "start" ]
 # install all dependencies and build project
 
 # stage 2
-FROM nginx:1.25.3-alpine AS runner
+# FROM nginx:1.25.3-alpine AS runner
 
-WORKDIR /usr/share/nginx/html
-# set working directory
+# WORKDIR /usr/share/nginx/html
+# # set working directory
 
-RUN rm -rf ./*
-# remove all files from working directory
+# RUN rm -rf ./*
+# # remove all files from working directory
 
-COPY --from=builder /app/build .
+# COPY --from=builder /app/build .
 
-ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
+# ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
 
 # COPY . .
 # COPY --from=builder /app/node_modules ./node_modules

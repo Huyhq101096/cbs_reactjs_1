@@ -61,7 +61,7 @@ const HeaderHome = (props: Props) => {
           <ul className="navbar-nav me-auto mt-2 mt-lg-0">
             <li className="nav-item">
               <NavLink className="nav-link" to="/">
-                HomeDemo123
+                HomeDemo1234
               </NavLink>
             </li>
             {renderLogin()}
